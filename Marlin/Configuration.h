@@ -370,8 +370,8 @@
 
 //this prevents dangerous Extruder moves, i.e. if the temperature is under the limit
 //can be software-disabled for whatever purposes by
-#define PREVENT_DANGEROUS_EXTRUDE
-//if PREVENT_DANGEROUS_EXTRUDE is on, you can still disable (uncomment) very long bits of extrusion separately.
+#define PREVENT_COLD_EXTRUSION
+//if PREVENT_COLD_EXTRUSION is on, you can still disable (uncomment) very long bits of extrusion separately.
 #define PREVENT_LENGTHY_EXTRUDE
 
 #define EXTRUDE_MINTEMP 170
@@ -564,8 +564,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 //
 // Probe Raise options provide clearance for the probe to deploy, stow, and travel.
 //
-#define Z_PROBE_DEPLOY_HEIGHT 3 // Raise to make room for the probe to deploy / stow
-#define Z_PROBE_TRAVEL_HEIGHT 2  // Raise between probing points.
+#define Z_CLEARANCE_DEPLOY_PROBE 3 // Raise to make room for the probe to deploy / stow
+#define Z_CLEARANCE_BETWEEN_PROBES 2  // Raise between probing points.
 
 //
 // For M851 give a range for adjusting the Z probe offset
@@ -786,7 +786,9 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = true; // set to true to invert the lo
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
 //#define DEFAULT_XYJERK                20.0    // (mm/sec)
-#define DEFAULT_XYJERK                15.0    // (mm/sec) Custom for TEVO Tarantula
+//#define DEFAULT_XYJERK                15.0    // (mm/sec) Custom for TEVO Tarantula
+#define DEFAULT_XJERK                15.0    // (mm/sec) Custom for TEVO Tarantula
+#define DEFAULT_YJERK                15.0    // (mm/sec) Custom for TEVO Tarantula
 #define DEFAULT_ZJERK                 0.4     // (mm/sec)
 #define DEFAULT_EJERK                 5.0    // (mm/sec)
 
